@@ -1,0 +1,33 @@
+﻿@model BlogSitem.Models.Sınıf.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelle</h2>
+<br />
+@using (Html.BeginForm("BlogGüncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Baslık)
+    @Html.TextBoxFor(x => x.Baslık, new { @class = "form-control" })
+    <br />
+
+    <label>Blog Resmi</label>
+    @Html.TextBoxFor(x => x.BlogImg, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogOzet)
+    @Html.TextAreaFor(x => x.BlogOzet, 15, 1, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.BlogYazı)
+    @Html.TextAreaFor(x => x.BlogYazı, 15, 1, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <button class="btn btn-success">Blog Güncelle</button>
+}
+

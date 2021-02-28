@@ -1,0 +1,16 @@
+﻿@using BlogSitem.Models.Sınıf
+@model List<Hakkımda>
+<div class="jumbotron bg-dark text-white">
+    <div class="container">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">İlhan Enes Daniş</h1>
+            @foreach (var x in Model)
+            {
+
+
+            <p class="lead my-3">@x.About</p>
+            }
+            
+        </div>
+    </div>
+</div>

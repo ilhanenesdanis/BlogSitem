@@ -1,0 +1,41 @@
+﻿@using BlogSitem.Models.Sınıf
+@model List<Blog>
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@for (int i = 0; i < 3; i++)
+{
+    <br />
+}
+<div class="container">
+    <div class="row">
+
+
+
+
+        <div class="col-md-8">
+            @foreach (var x in Model)
+            {
+
+
+                <div class="card mb-4">
+                    <img src="@x.BlogImg" alt="" class="car-img-top img-thumbnail">
+                    <div class="card-body">
+                        <h4 class="card-title">@x.Baslık</h4>
+                        <p class="card-text">
+                            @x.BlogYazı
+                        </p>
+                        
+                    </div>
+                    <div class="card-footer text-muted">
+                        Yazar:İlhan Enes Daniş
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+

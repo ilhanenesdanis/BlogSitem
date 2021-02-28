@@ -1,0 +1,89 @@
+﻿@model BlogSitem.Models.Sınıf.Anasf
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<header>
+    @Html.Action("p1", "Home")
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+
+
+
+
+            <div class="col-md-8">
+                @foreach (var x in Model.deger1)
+                {
+                    <div class="card mb-4">
+                        <img src="@x.BlogImg" alt="" class="car-img-top img-thumbnail">
+                        <div class="card-body">
+                            <h4 class="card-title">@x.Baslık</h4>
+                            <p class="card-text">
+                                @x.BlogOzet
+                            </p>
+                            <a href="/Home/BlogDetay/@x.Id/" class="btn btn-primary">Devamını Oku</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            @x.Tarih
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-4">
+                
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Kategoriler</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <ul class="list-unstyled">
+                                    @foreach (var x in Model.deger2)
+                                    {
+
+
+                                        <li>
+                                            <a href="#">@x.KategoriAd</a>
+
+
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="list-unstyled">
+                                    @foreach (var x in Model.deger3)
+                                    {
+
+
+                                    <li>
+                                        <a href="#">@x.KategoriAd</a>
+
+
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Günün Sözü</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Biz Kimsenin Gecesine ışık olmaya gelmedik biz keyfimizden yanıyoruz</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
